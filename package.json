@@ -42,5 +42,6 @@
   "engines" : { 
     "npm" : ">=8.19.4 <9.0.0",
     "node" : ">=16.20.0 <17.0.0"
-  }
+  },
+  "proxy": "https://vercel-test-git-main-detailswes.vercel.app/api"
 }
