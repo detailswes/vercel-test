@@ -1,12 +1,14 @@
 {
     "version": 2,
-    "builds": [{
-      "src": "./server",
-      "use": "@now/node-server"
-    }],
-    "routes": [{"handle": "filesystem"},
+    "builds": [
       {
-        "src": "/.*",
+        "src": "package.json",
+        "use": "yarn build"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
         "dest": "server.js"
       }
     ]
