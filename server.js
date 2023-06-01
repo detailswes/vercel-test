@@ -1,22 +1,21 @@
-const express = require('express');
-const prerender = require('prerender-node');
-
+const express = require("express");
+const path = require("path");
 const app = express();
+app.use(
+	require("prerender-node").set("prerenderToken",'BCk4NCFmGN2ZVreWRHMT' )
+);
+app.use(express.static(path.join(__dirname, "build")));
 
-// Serve the static React build files
-app.use(express.static('build'));
-
-// Use prerender.io for prerendering
-app.use(prerender.set('prerenderToken', 'BCk4NCFmGN2ZVreWRHMT'));
-
-// Serve the React app for all routes
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-// Start the server
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT || 5121;
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server started on port ${port}`);    
 });
+
+module.exports = app;
+
 
