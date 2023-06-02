@@ -1,5 +1,10 @@
 {
     "rewrites": [
       { "source": "/(.*)", "destination": "/server.js" }
+    ],
+    "routes": [
+      { "src": "/static/(.*)", "dest": "/static/$1" },
+      { "src": "/precache-manifest(.*)", "dest": "/precache-manifest$1" },
+      { "src": "/asset-manifest.json", "dest": "/asset-manifest.json" }
     ]
   }
