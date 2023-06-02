@@ -1,19 +1,11 @@
 {
     "version": 2,
-    "buildCommand": "yarn build",
-    "installCommand": "yarn install",
-    "outputDirectory": "build",
-    "framework": "none",
     "builds": [
       {
-        "src": "servers.js",
-        "use": "@now/node"
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "build" }
       }
     ],
-    "routes": [
-      {
-        "src": "/(.*)", 
-        "dest": "servers.js"
-      }
-    ]
+    "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
   }
