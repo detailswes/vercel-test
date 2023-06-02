@@ -1,6 +1,9 @@
 {
     "version": 2,
     "buildCommand": "yarn build",
+    "framework": "null",
+    "installCommand": "yarn install",
+    "outputDirectory": "build",
     "builds": [
       {
         "src": "servers.js",
