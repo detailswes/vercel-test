@@ -2,12 +2,17 @@
     "version": 2,
     "buildCommand": "yarn build",
     "installCommand": "yarn install",
-    "redirects": [
-        { "source":  "/*", "destination": "/servers.js" }
-      ]
+    "outputDirectory": "build",
+    "builds": [
+      {
+        "src": "servers.js",
+        "use": "@now/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)", 
+        "dest": "servers.js"
+      }
+    ]
   }
-
-
-
-
-  
