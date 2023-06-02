@@ -3,12 +3,6 @@
     "buildCommand": "yarn build",
     "installCommand": "yarn install",
     "outputDirectory": "build",
-    "builds": [
-      {
-        "src": "servers.js",
-        "use": "@now/node"
-      }
-    ],
     "routes": [
       {
         "src": "/(.*)", 
