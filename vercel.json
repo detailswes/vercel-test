@@ -1,7 +1,7 @@
 {
     "version": 2,
     "buildCommand": "yarn build",
-    "framework": "null",
+    "framework": "express",
     "installCommand": "yarn install",
     "outputDirectory": "build",
     "builds": [
